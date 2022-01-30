@@ -36,9 +36,10 @@ public class MainActivity extends AppCompatActivity {
 
         final CompactCalendarView compactCalendarView = (CompactCalendarView) findViewById(R.id.calendar_view);
 
-        compactCalendarView.setFirstDayOfWeek(Calendar.MONDAY);
+        compactCalendarView.setFirstDayOfWeek(Calendar.MONDAY); // 첫 번째 요일을 월요일로 설정
 
         ImageButton button_add_event = (ImageButton) findViewById(R.id.button_add_event);
+
         button_add_event.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
