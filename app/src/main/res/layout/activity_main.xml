@@ -8,48 +8,71 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView_month"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:textAlignment="center"
-        android:background="#ffe95451"
-        android:textColor="#fff"
-        android:textSize="30sp"
-        android:gravity="center"
-        android:text="Month" />
+        android:layout_height="match_parent"
+        android:layout_weight="7"
+        android:orientation="vertical">
+        <ImageButton
+            android:id="@+id/button_add_event"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="20dp"
+            android:layout_gravity="right"
+            android:background="@drawable/plus" />
+        <TextView
+            android:id="@+id/textView_month"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#FFFFFF"
+            android:gravity="center"
+            android:text="Month"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
 
-    <com.github.sundeepk.compactcalendarview.CompactCalendarView
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/calendar_view"
-        android:layout_width="match_parent"
-        android:paddingRight="10dp"
-        android:paddingLeft="10dp"
-        android:layout_height="250dp"
-        app:compactCalendarTargetHeight="250dp"
-        app:compactCalendarTextSize="12sp"
-        app:compactCalendarBackgroundColor="#ffe95451"
-        app:compactCalendarTextColor="#fff"
-        app:compactCalendarCurrentSelectedDayBackgroundColor="#E57373"
-        app:compactCalendarCurrentDayBackgroundColor="#B71C1C"
-        app:compactCalendarMultiEventIndicatorColor="#fff"
-        />
 
-    <TextView
-        android:id="@+id/textView_result"
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:textAlignment="center"
-        android:background="#ffe95451"
-        android:textColor="#fff"
-        android:gravity="center"
-        android:text="클릭한 날짜 정보" />
-    <ImageButton
-        android:id="@+id/button_add_event"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/plus"
-        />
+        android:layout_height="match_parent"
+        android:layout_weight="1.5"
+        android:orientation="vertical">
+
+        <com.github.sundeepk.compactcalendarview.CompactCalendarView
+            android:id="@+id/calendar_view"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            app:compactCalendarBackgroundColor="#FFFFFF"
+            app:compactCalendarCurrentDayBackgroundColor="#B71C1C"
+            app:compactCalendarCurrentSelectedDayBackgroundColor="#7E2196F3"
+            app:compactCalendarMultiEventIndicatorColor="#fff"
+            app:compactCalendarTargetHeight="250dp"
+            app:compactCalendarTextColor="#000000"
+            app:compactCalendarTextSize="12sp" />
+
+        <TextView
+            android:id="@+id/textView_result"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#FFFFFF"
+            android:gravity="center"
+            android:text="클릭한 날짜 정보"
+            android:textAlignment="center"
+            android:textColor="#567CFF" />
+
+        <TextView
+            android:id="@+id/date_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
+
+    </LinearLayout>
 
 
 </LinearLayout>

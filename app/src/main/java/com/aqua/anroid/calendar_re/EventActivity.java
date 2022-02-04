@@ -44,6 +44,8 @@ public class EventActivity extends AppCompatActivity {
     private ImageView end_date_btn;
     private Button event_save_btn;
 
+    private EditText event_memo;
+
     private TextView mTextViewResult; //결과 보여줌
 
     private String startdate, enddate; // db 저장
@@ -63,6 +65,8 @@ public class EventActivity extends AppCompatActivity {
         start_date_btn = (ImageView) findViewById(R.id.start_date_btn);
         end_date_btn = (ImageView) findViewById(R.id.end_date_btn);
         event_save_btn = (Button) findViewById(R.id.event_save_btn);
+
+        event_memo = (EditText) findViewById(R.id.event_memo);
 
         mTextViewResult = (TextView) findViewById(R.id.result_text);
         mTextViewResult.setMovementMethod(new ScrollingMovementMethod());
@@ -101,9 +105,10 @@ public class EventActivity extends AppCompatActivity {
             String title = (String) params[1];
             String startdate = (String) params[2];
             String enddate = (String) params[3];
+            String memo = (String) params[4];
 
             String serverURL = (String) params[0];
-            String postParameters = "title=" + title + "&startdate=" + startdate + "&enddate=" + enddate;
+            String postParameters = "title=" + title + "&startdate=" + startdate + "&enddate=" + enddate + "&memo=" + memo;
 
 
             try {
@@ -215,9 +220,10 @@ public class EventActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String title = event_title.getText().toString();
+                String memo = event_memo.getText().toString();
 
                 InsertData task = new InsertData();
-                task.execute("http://" + IP_ADDRESS + "/insert.php", title, startdate, enddate);
+                task.execute("http://" + IP_ADDRESS + "/insert.php", title, startdate, enddate, memo);
 
 
             }
