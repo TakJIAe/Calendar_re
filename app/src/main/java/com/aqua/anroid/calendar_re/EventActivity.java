@@ -2,6 +2,7 @@ package com.aqua.anroid.calendar_re;
 
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -225,6 +226,12 @@ public class EventActivity extends AppCompatActivity {
                 InsertData task = new InsertData();
                 task.execute("http://" + IP_ADDRESS + "/insert.php", title, startdate, enddate, memo);
 
+                Intent i = new Intent(EventActivity.this, MainActivity.class);
+
+                // 캘린더에 시작-끝 날짜 전달
+                i.putExtra("start", startdate);
+                i.putExtra("end", enddate);
+                startActivity(i);
 
             }
         });

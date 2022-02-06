@@ -13,13 +13,26 @@
         android:layout_height="match_parent"
         android:layout_weight="7"
         android:orientation="vertical">
-        <ImageButton
-            android:id="@+id/button_add_event"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_margin="20dp"
-            android:layout_gravity="right"
-            android:background="@drawable/plus" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+            <ImageButton
+                android:id="@+id/event_loading"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right"
+                android:layout_margin="20dp"
+                android:background="@drawable/plus" />
+            <ImageButton
+                android:id="@+id/button_add_event"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/plus" />
+        </LinearLayout>
+
         <TextView
             android:id="@+id/textView_month"
             android:layout_width="match_parent"
